@@ -24,6 +24,17 @@ class Grb
       ]
     },
 
+    :forcepush => {
+      :desc  => "=> force push branch `branch`, default current_branch\ngrb forcepush [branch] [--explain]",
+      :commands => [
+        '"#{GIT} push #{origin} #{branch}:refs/heads/#{branch} --force"',
+        '"#{GIT} fetch #{origin}"',
+        '"#{GIT} config branch.#{branch}.remote #{origin}"',
+        '"#{GIT} config branch.#{branch}.merge refs/heads/#{branch}"',
+        '"#{GIT} checkout #{branch}"'
+      ]
+    },
+
     :mv     => {
       :desc  => "=> rename `branch1` to `branch2`\ngrb mv   [branch1] [branch2] [--explain]\n=> rename current branch to `branch`\ngrb mv branch [--explain]",
       :commands => [
