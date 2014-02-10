@@ -12,7 +12,7 @@ else
   def debugger;end
 end
 
-abort('Version: ' + File.read(File.expand_path("../../VERSION",__FILE__))) if ARGV.delete('--version') || ARGV.delete('-v')
+abort('Version: ' + Grb::VERSION) if ARGV.delete('--version') || ARGV.delete('-v')
 
 EXPLAIN = ARGV.delete('--explain') || ARGV.delete('-e')
 

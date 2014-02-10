@@ -1,3 +1,5 @@
+require "grb/version"
+
 class Grb
   GIT    = ENV['GRB_GIT']    || 'git'
   ORIGIN = ENV['GRB_ORIGIN'] || 'origin'
